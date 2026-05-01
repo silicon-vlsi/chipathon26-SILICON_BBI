@@ -9,3 +9,8 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 
 - `git clone git clone https://github.com/iic-jku/IIC-OSIC-TOOLS.git -b ieee_chipathon --depth=1`
   - `git branch` to make sure `ieee_chipathon` is checked out.
+
+# RESOURCES
+
+**MAGIC**
+- [Xscheme-Magic Flow](https://www.youtube.com/watch?v=ZZ5fIBwLZ0k&t=2s): iny Tapeout Analog Submission Guide | IEEE Open Silicon IC Design Bootcamp (Philippines)  Agood 19min succint guide.
