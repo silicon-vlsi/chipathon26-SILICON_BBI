@@ -13,4 +13,4 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 # RESOURCES
 
 **MAGIC**
-- [Xscheme-Magic Flow](https://www.youtube.com/watch?v=ZZ5fIBwLZ0k&t=2s): iny Tapeout Analog Submission Guide | IEEE Open Silicon IC Design Bootcamp (Philippines)  Agood 19min succint guide.
+- [Xschem-Magic Flow](https://www.youtube.com/watch?v=ZZ5fIBwLZ0k&t=2s): Tiny Tapeout Analog Submission Guide | IEEE Open Silicon IC Design Bootcamp (Philippines)  Agood 19min succint guide.
