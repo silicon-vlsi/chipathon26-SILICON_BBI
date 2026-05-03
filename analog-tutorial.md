@@ -1,0 +1,131 @@
+# Analog Design Tutorial
+
+This is a short tutorial for first-time users of the **xschem** and **ngspice** to get them started right away.
+
+## Resources
+
+- **xschem**:
+  - [Xscheme Tutorial](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_run_simulation.html).
+
+# Schematic-entry and Simulation using xschem and ngspice
+
+It is assumed that you have already installed the opensource design tools using [IIC OSIC TOOLS](https://github.com/iic-jku/iic-osic-tools) container.
+
+- Run Xscheme inside the OSIC-TOOLS docker image:
+  - `$ xschem`
+- Create a new instance by selecting `Tools -> Insert Symbol` or, `(Shift + i)`
+- Two essential libraries:
+  - `.../xschem_library/devices` : technology independent primitive devices eg.:
+    - Linear elements: `res.sym`, `capa.sym`, `ind.sys`
+    - Stimulus sources: `vsource.sym`, `isource.sym`
+    - Controled sources: `vcvs.sym`, `vccs.sym`, etc. 
+  - `/foss/pdks/gf180mcuD/libs.tech/xschem/symbols` : GF180MCUD devices:
+    - FETS: `nfet_03v3.sym`, `pfet_03v3.sym`, `nfet_05v0.sym`, `pfet_05v0.sym`
+- After instating devices, wire them, change properties and add ports.
+  - To change properties: select the devices and press `q` and change the value.
+
+Change the capacitance to 50nF and the inductance to 10mH
+
+- Click on the `capacitor` and press `q`; change the value of `C1` to `50nF` then press `OK`
+
+![](images/3.1-09-change_capacitor.png)
+
+- Click on the `inductor` and press `q`; change the value of `L1` to `10mH` then press `OK`
+
+![](images/3.1-10-change_inductor.png)
+
+Set the voltage source
+
+- Click on the `voltage source` and press `q`; change the value of `E1` to `" '3*cos(time*time*time*1e11)' "` then press `OK` (note the single and double quotes)
+
+![](images/3.1-11-set_voltage_source.png)
+
+Final view
+
+![](images/3.1-12-final_view.png)
+
+#### 4. Schematic capture - Wiring
+
+To connect the wire, press `w` then use the left-mouse click to create
+multiple wire segments
+
+![](images/3.1-13-wiring_res.png)
+
+1. Put the cursor to the red point, then press `w`
+2. Move the cursor here and left-mouse click, then press `w` again
+3. Move the cursor here and left-mouse click, then press `w` again
+4. Move the cursor here and left-mouse click on the red point to finish wiring
+
+![](images/3.1-14-wiring_two_components.png)
+
+1. Put the cursor to the red point, then press `w`
+2. Move the cursor to the red point, then left-mouse click
+
+#### 5. Schematic capture - Create lab pins
+
+To view the waveform and name the net, insert a `lab_pin` symbol, and change its name
+
+- Create a `lab_pin` by `xscheme_library/devices` >> `lab_pin.sym` >> `OK` >> Click on the net for the `lab_pin`
+
+![](images/3.1-15_create_lab_pin_symbol.png)
+
+- Select the `lab_pin` symbol and then press `q` to rename it into `A`
+
+![](images/3.1-16_create_lab_pin_A.png)
+
+- Similary create the lab pin `B`, `C`, and `0` (ground)
+
+![](images/3.1-17_create_lab_pin_BC0.png)
+
+### Note
+
+- You can copy the lab pin `A` by selecting it and press `c`, then move it to the correct net
+
+- Rotate can be done by pressing `Shift+r`
+
+#### 6. Schematic capture - Set up a simulation
+
+To set up the simulation, insert a code symbol and enter the simulation commands
+
+- Create a code symbol by `xscheme_library/devices` >> `code.sym` >> `OK` >> Click on the schematic to place it
+
+![](images/3.1-18-create_simulation_symbol.png)
+
+![](images/3.1-19-simulation_symbol_view.png)
+
+- Select the code symbol and press `q`; change the `name` into `STIMULI` and `value` to:
+
+```spice
+".tran 10n 2000u uic
+.save all"
+```
+
+![](images/3.1-20-insert_simulation_command.png)
+
+![](images/3.1-21-final_view.png)
+
+### Note
+
+- The double quote is required
+
+#### 7. Simulate the design using NGSpice 
+
+- Xscheme uses NGSpice as the default simulator
+
+- To create the design's netlist, click `Netlist` button to generate the spice file
+
+![](images/3.1-22-generate_netlist.png)
+
+- To view the netlist, select `Simulation` >> `Edit netlist`
+
+![](images/3.1-23-edit_netlist.png)
+
+- To simulate, click `Simulate` button to run the simulation
+
+![](images/3.1-24-simulate_design.png)
+
+#### 8. Plot the waveform in NGSpice
+
+- Plot the waveform in NGSpice by enter `plot a b c` in NGSpice terminal
+
+![](images/3.1-25-ngspice_simulation.png)
