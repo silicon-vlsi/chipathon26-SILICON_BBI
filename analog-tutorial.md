@@ -23,65 +23,78 @@ It is assumed that you have already installed the opensource design tools using 
     - FETS: `nfet_03v3.sym`, `pfet_03v3.sym`, `nfet_05v0.sym`, `pfet_05v0.sym`
 - After instating devices, wire them, change properties and add ports.
   - To change properties: select the devices and press `q` and change the value.
+  - Place pointer on the port to start *wiring*  press `w` to start a wire connection. To jog/bend the wire, press `w` Or, click and drag the end of the wire to continue wiring.
+  - Select and press `c` to *copy* an instance and left click to place it.
+  - Select and press `m` or *left-click* and drag to move an instance.
+  - While moving an instance, you can rotate or flip by:
+    - `Shift+r` to *rotate*
+    - `Shift+f` to *flip*
+- To view the waveform, *label* essential nodes by instatiating `lab_pin.sym` from the `.../xschem_library/devices` library. Place the pin on the wire, *double-click* or `q` the pin and add a succint but descriptive wire name.
+- If this is a block you want to create a symbol, you need to add ports eg. `vin`, `vout`, etc.
+  - Place ports from the `.../xschem_library/devices` library:
+    - `ipin.sym` : Input port
+    - `opin.sym` : Output port
+    - `iopin.sym` : Input/Output port
+  - *Note* that ngspice (or any spice) does not recognize port type. This is for schemtic level checks.
 
-Change the capacitance to 50nF and the inductance to 10mH
+- **Create a symbol** by selecting `Symbol` >> `Make symbol from schematic`
+  - Click `OK` on the dialog `Do you want to make symbol view`
+  - A new file (say `inv1.sym`) will be create in the same directory
+  - Edit the symbol:
+    - Click on `File` >> `Open` then select `inv1.sym` in the open dialog
 
-- Click on the `capacitor` and press `q`; change the value of `C1` to `50nF` then press `OK`
+- You might need to choose the correct directory containing the symbol file first.
 
-![](images/3.1-09-change_capacitor.png)
+- **Draw your desired shape**
+  - Delete the rectangle by selecting the lines and press `delete`.
+  - Use the line/circle/etc to draw your shape
+  - Move the pins to apprpirate place on the shape. 
 
-- Click on the `inductor` and press `q`; change the value of `L1` to `10mH` then press `OK`
+- **Create a Testbench** 
+  - Create a new schematic by selecting `File` >> `Create new window/tab`
+  - Insert a new instance by selecting `Tools` >> `Insert Symbol` and selecting the folder where newly created symbol resides (say `inv1.sym`)
 
-![](images/3.1-10-change_inductor.png)
+- Create a new schematic as follows.
 
-Set the voltage source
+>> `VDD`, `VIN`: `vsource.sym`
 
-- Click on the `voltage source` and press `q`; change the value of `E1` to `" '3*cos(time*time*time*1e11)' "` then press `OK` (note the single and double quotes)
+>> `vdd`, `vin`, `vout`: `lab_pin.sym`
 
-![](images/3.1-11-set_voltage_source.png)
+![](images/3.4-07-insert_symbol.png)
 
-Final view
+- Next, setup the library and simulation options as follows.
 
-![](images/3.1-12-final_view.png)
+![](images/3.4-08-setup_library_and_simulation.png)
 
-#### 4. Schematic capture - Wiring
+#### 6. Run NGSpice in Batch Mode
 
-To connect the wire, press `w` then use the left-mouse click to create
-multiple wire segments
+- Click on `Simulation` >> `Configure simulators & tools`, selecting `Ngspice batch` and `Gaw viewer`, then click on `Accept, no Save and Close`.
 
-![](images/3.1-13-wiring_res.png)
+![](images/3.4-09-batch_mode.png)
 
-1. Put the cursor to the red point, then press `w`
-2. Move the cursor here and left-mouse click, then press `w` again
-3. Move the cursor here and left-mouse click, then press `w` again
-4. Move the cursor here and left-mouse click on the red point to finish wiring
+#### 7. Generate Netlist and Simulate
 
-![](images/3.1-14-wiring_two_components.png)
+- Click on `Netlist` button to generate the netlist
 
-1. Put the cursor to the red point, then press `w`
-2. Move the cursor to the red point, then left-mouse click
+- Click on `Simulation` >> `Edit Netlist` to view the netlist
 
-#### 5. Schematic capture - Create lab pins
+- Click on `Simulate` button to start the simulation
 
-To view the waveform and name the net, insert a `lab_pin` symbol, and change its name
+![](images/3.4-10-generate_netlist_and_simulate.png)
 
-- Create a `lab_pin` by `xscheme_library/devices` >> `lab_pin.sym` >> `OK` >> Click on the net for the `lab_pin`
+#### 8. View the Waveform
 
-![](images/3.1-15_create_lab_pin_symbol.png)
+We use `Xscheme-GAW` to view the waveform.
 
-- Select the `lab_pin` symbol and then press `q` to rename it into `A`
+- Click on `Waves` button and select `External viewer`
 
-![](images/3.1-16_create_lab_pin_A.png)
+![](images/3.4-11-external_viewer.png)
 
-- Similary create the lab pin `B`, `C`, and `0` (ground)
+- In `GAW GUI` opened, click on a panel first, then click on the signal you want to display
 
-![](images/3.1-17_create_lab_pin_BC0.png)
+![](images/3.4-12-select_signal.png)
 
-### Note
 
-- You can copy the lab pin `A` by selecting it and press `c`, then move it to the correct net
-
-- Rotate can be done by pressing `Shift+r`
 
 #### 6. Schematic capture - Set up a simulation
 
@@ -129,3 +142,7 @@ To set up the simulation, insert a code symbol and enter the simulation commands
 - Plot the waveform in NGSpice by enter `plot a b c` in NGSpice terminal
 
 ![](images/3.1-25-ngspice_simulation.png)
+
+
+
+
