@@ -1,8 +1,8 @@
 # Analog Design Tutorial
 
 This page is companion page for two short video tutorials:
-- [Design and Simulation using Xschem and ngspice][VideoXschemNgspice]
-- [Layout using Magic][VideoMagic]  
+- [Video Tutorial Part-1][VideoXschemNgspice]: Design and Simulation using Xschem and ngspice
+- [Video Tutorial Part-2][VideoMagic]:Layout using Magic 
 
 The purpose of these tutorials is to get circuit designers quickly started on the end-to-end design flow from design to layout using the open-source EDA tools [xschem][XSchem], [ngspice][NGSpice], [Magic][Magic], and [Netgen][Netgen]. Note, although KLayout is not covered in this tutorial, it is very well supported for this project that you will find links to from other tracks.
 
@@ -12,7 +12,7 @@ More resources are provided in the [Resources](#Resources) section of this page 
 
 # Design and Simulation using xschem and ngspice
 
-- This section is a *companion* page for this [Video Tutorial: Design and SImulation using xschem and ngspice][VideoXschemNgspice].
+- This section is a *companion* page for this [Video Tutorial Part-1][VideoXschemNgspice]: Design and SImulation using xschem and ngspice.
 
 - Files used in the video tutorial:
   - [`xschem-ngspice-files/inv1.sch`](xschem-ngspice-files/inv1.sch): Inverter schematic.
@@ -81,7 +81,9 @@ value="
 "
 ```
 
-    - For parameters, measure statements, and simulation commands:
+
+- For parameters, measure statements, and simulation commands:
+
 
 ``` spice
 name=NGSPICE only_toplevel=true  
@@ -154,7 +156,7 @@ print gmoverid
 
 # Layout with Magic
 
-This section is a *companion* page for this [Video Tutorial on Layout using Magic][VideoMagic]
+This section is a *companion* page for this [Video Tutorial Part-2][VideoMagic]:  Layout using Magic
 
 Files used in this video:
 - [`magic-files/inv1.mag`](magic-files/inv1.mag): Inverter layout
@@ -224,7 +226,7 @@ Following instructions are from `https://github.com/subhransu-01/sky130-magic` :
   - [Open Source VLSI](https://github.com/stineje/gf180mcu-open-source-vlsi): A great detail set of deep tutorials from James Stine and team at OSU.
   - [Drawing an inverter](https://docs.google.com/document/d/1hSLKsz9xcEJgAMmYYer5cDwvPqas9_JGRUAgEORx1Yw/edit#heading=h.j6gtadx04fb6): A google doc by Ryan Ridley, Teo Ene, and James E. Stine. Detail step-by-step guide for SKY-130nm process.
   - [Analog Circuit Design Flow](https://analogicus.com/rply_ex0_sky130nm/tutorial) by Carsten Wulff
-  - [Open-Source Analog Design Flowing using EFabless and SKY130nm (PDF)](Thater-OpenSource-AnalogDesgnFlow-Efabless-SKY130.pdf): Detail end-to-end design flow by by Joshua Thater.
+  - [Open-Source Analog Design Flowing using EFabless and SKY130nm (PDF)](docs/Thater-OpenSource-AnalogDesgnFlow-Efabless-SKY130.pdf): Detail end-to-end design flow by by Joshua Thater.
 
   
 - **xschem-ngspice**:
@@ -245,7 +247,7 @@ Following instructions are from `https://github.com/subhransu-01/sky130-magic` :
   - **Videos**
     - [10min speedrun of a inverter layout by Matt Venn](https://www.youtube.com/watch?v=IQ_DcWT_cbc)
     - [Tutorial: Analog Layout of an OpAmp](https://youtu.be/XvBpqKwzrFY?si=AyL0Wr3V4gb954yx) by Tim Edwards. (~1hr 30min)
-    - Magic Tutorials by Carsten Wulff [[Tutorial-1]((https://www.youtube.com/watch?v=ORw5OaY33A4&t=9s)|[Tutorial-2](https://www.youtube.com/watch?v=NUahmUtY814)|[Tutorial-3](https://www.youtube.com/watch?v=OKWM1D0_fPI)]
+    - Magic Tutorials by Carsten Wulff [ [Tutorial-1](https://www.youtube.com/watch?v=ORw5OaY33A4&t=9s)|[Tutorial-2](https://www.youtube.com/watch?v=NUahmUtY814)|[Tutorial-3](https://www.youtube.com/watch?v=OKWM1D0_fPI) ]
 
 - **Klayout** 
   - [Tutorial using KLayout with gf180mcu (part 4)](https://www.youtube.com/watch?v=vamfMryYPS4)
@@ -253,13 +255,12 @@ Following instructions are from `https://github.com/subhransu-01/sky130-magic` :
 ----
 :technologist: Saroj Rout (:link: `Discord @sroutk`)
 
-
 * * *
 
 [VideoXschemNgspice]:   https://drive.google.com/file/d/1QuJyBosXAcAIhj2Gz0zoxz_EHe3IlhK6/view?usp=sharing
 [VideoMagic]:           https://drive.google.com/file/d/1ffgQrh8-0LQ_lEhNJCcJhuNUZTaG0cDd/view?usp=drive_link
 [XSchem]:               https://xschem.sourceforge.io/stefan/index.html
 [NGSpice]:              https://ngspice.sourceforge.net
-[NGSpiceMan]:           https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
+[NGSpiceMan]:           https://ngspice.sourceforge.io/docs/ngspice-manual.pdf
 [Magic]:                http://opencircuitdesign.com/magic/
 [Netgen]:               http://opencircuitdesign.com/netgen/
