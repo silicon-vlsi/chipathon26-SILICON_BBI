@@ -16,13 +16,13 @@ The design kit supports comprehensive global and local mismatch statistical char
 
 MIM was placed in between Metal2 and Metal3; SIN=0.042um for 1.5fF, SIN=0.062um for 1.0fF
 
-![Cross-Section][media/cross-section-gf180mcu.png]
+![Cross-Section](media/cross-section-gf180mcu.png)
 
 # Basic Design Rules
 
 ## **Basic Layout Layers**
 
-![Basic Layout Layers][media/magic-gf180-quickGuide.png]
+![Basic Layout Layers](media/magic-gf180-quickGuide.png)
 
 ## **Grid & geometry**
 

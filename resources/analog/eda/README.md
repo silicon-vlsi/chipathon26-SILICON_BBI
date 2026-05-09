@@ -169,7 +169,7 @@ Files used in this video:
 
 **Basic Layout Layers**
 
-![Basic Layout Layers][../pdk/media/magic-gf180-quickGuide.png]
+![Basic Layout Layers](../pdk/media/magic-gf180-quickGuide.png)
 
 
 **Quick Start Guide**
