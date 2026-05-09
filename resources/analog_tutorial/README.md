@@ -2,7 +2,7 @@
 
 This page is companion page for two short video tutorials:
 - [Video Tutorial Part-1][VideoXschemNgspice]: Design and Simulation using Xschem and ngspice
-- [Video Tutorial Part-2][VideoMagic]:Layout using Magic 
+- [Video Tutorial Part-2][VideoMagic]: Layout using Magic 
 
 The purpose of these tutorials is to get circuit designers quickly started on the end-to-end design flow from design to layout using the open-source EDA tools [xschem][XSchem], [ngspice][NGSpice], [Magic][Magic], and [Netgen][Netgen]. Note, although KLayout is not covered in this tutorial, it is very well supported for this project that you will find links to from other tracks.
 
