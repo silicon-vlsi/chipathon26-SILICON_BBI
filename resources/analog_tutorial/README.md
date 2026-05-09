@@ -1,37 +1,23 @@
 # Analog Design Tutorial
 
-This is a short tutorial for first-time users of the **xschem**. **ngspice** and **magic** to get them started right away.
+This page is companion page for two short video tutorials:
+- [Design and Simulation using Xschem and ngspice][VideoXschemNgspice]
+- [Layout using Magic][VideoMagic]  
 
-## Resrouces 
+The purpose of these tutorials is to get circuit designers quickly started on the end-to-end design flow from design to layout using the open-source EDA tools [xschem][XSchem], [ngspice][NGSpice], [Magic][Magic], and [Netgen][Netgen]. Note, although KLayout is not covered in this tutorial, it is very well supported for this project that you will find links to from other tracks.
 
-- [Open-Source Analog Design Flowing using EFabless and SKY130nm (PDF)](Thater-OpenSource-AnalogDesgnFlow-Efabless-SKY130.pdf): Detail end-to-end design flow by by Joshua Thater.
+More resources are provided in the [Resources](#Resources) section of this page for participants to deep dive as they comfortable using the tools. 
 
+[GF180MCU Open-Source VLSI Repo](https://github.com/stineje/gf180mcu-open-source-vlsi) from [James E. Stine](https://github.com/stineje) and team is a very detail instructions and tutorials from installation to design. 
 
-- **IIC-OSIC-TOOLS**
-  - [OSIC-TOOLS GitHub Page](https://github.com/iic-jku/iic-osic-tools)
-  
-- **xschem**:
-  - [Official Site](https://xschem.sourceforge.io/stefan/index.html)
-  - [Tutorial: Run a simulation with xschem](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_run_simulation.html): a quick step-by-step html guide from the creator Stefan Schippers.
-  - [xschem displaying simulation waveform](https://www.youtube.com/watch?v=bP9w3zm1qv4): a 10min video on embedded graphs by Stephan Schippers.  
-  - [Viewing Simulation Data with xschem](http://repo.hu/projects/xschem/xschem_man/graphs.html): html guide on the official site.
-  - Three part *tutorial videos* using xschem and ngspice with GF180MCU
-    - [Part-1](https://youtu.be/MdywD87-DVg) | [Part-2](https://youtu.be/DLvZSsLAbho) | [Part-3](https://youtu.be/nBnR8Nm_B_I)
-  - [Open Source VLSI](https://github.com/stineje/gf180mcu-open-source-vlsi): A great detail set of deep tutorials from James Stine at OSU.
+# Design and Simulation using xschem and ngspice
 
-- **ngspice**
-  - [Official Site](https://ngspice.sourceforge.io/)
-  - [ngspice Manual](https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
-
-- **Klayout** 
-  - [Tutorial using KLayout with gf180mcu (part 4)](https://www.youtube.com/watch?v=vamfMryYPS4)
-
-# Schematic-entry and Simulation using xschem and ngspice
-
-- This section is a *companion*(ish) page for this [Video Tutorial](https://drive.google.com/file/d/1QuJyBosXAcAIhj2Gz0zoxz_EHe3IlhK6/view?usp=sharing)
+- This section is a *companion* page for this [Video Tutorial: Design and SImulation using xschem and ngspice][VideoXschemNgspice].
 
 - Files used in the video tutorial:
   - [`xschem-ngspice-files/inv1.sch`](xschem-ngspice-files/inv1.sch): Inverter schematic.
+  - [`xschem-ngspice-files/inv1.sym`](xschem-ngspice-files/inv1.sym): Inverter symbol.
+  - [`xschem-ngspice-files/TB_inv1.sch`](xschem-ngspice-files/TB_inv1.sch): Testbench for Inverter.
  
 It is assumed that you have already installed the opensource design tools using [IIC OSIC TOOLS](https://github.com/iic-jku/iic-osic-tools) container.
 
@@ -144,9 +130,7 @@ plot v(vin) v(vout)
     - You can also use embedded plots in xschem. References can be found in the *resource* on top.
 
 
-# Advanced Features
-
-## xschem-ngspice
+## xschem-ngspice Advanced Features 
 
 **Back Annotation of Operating Point**
 
@@ -170,7 +154,16 @@ print gmoverid
 
 # Layout with Magic
 
-This section is a *companion*(ish) page for this [Video Tutorial](https://drive.google.com/file/d/1ffgQrh8-0LQ_lEhNJCcJhuNUZTaG0cDd/view?usp=drive_link).
+This section is a *companion* page for this [Video Tutorial on Layout using Magic][VideoMagic]
+
+Files used in this video:
+- [`magic-files/inv1.mag`](magic-files/inv1.mag): Inverter layout
+- [`magic-files/inv1-layout.spice`](magic-files/inv1-layout.spice): Extracted netlist (for LVS) of the inverter layout.
+- [`magic-files/inv1-pex.spice`](magic-files/inv1-pex.spice): Extracted netlist (for parasitics) of the inverter layout.
+- [`magic-files/inv1-xschem.spice`](magic-files/inv1-xshem.spice): Extracted netlist (for LVS) of the inverter schematic.
+- [`magic-files/extract-lvs.tcl`](magic-files/extract-lvs.tcl): tcl script for extracting netlist for LVS 
+- [`magic-files/extract-pex.tcl`](magic-files/extract-pex.tcl): tcl script for extracting netlist for post-layout simulation.
+
 
 **Quick Start Guide**
 
@@ -180,7 +173,7 @@ This section is a *companion*(ish) page for this [Video Tutorial](https://drive.
      - `-T <tech file>`: This is not required for chipathon container.
      - `-r <startup file>`: also not required for chipathon container.
 - Follow the video tutorial or any of the links in the resources to draw and complete the layout.  
-- Extract the netlist using the following `tcl` commands in the tk-console (tkcon):
+- Extract the netlist using the following basic set of `tcl` commands in the tk-console (tkcon):
 
 ``` tcl
 extract all 
@@ -188,14 +181,85 @@ ext2spice lvs
 ext2spice -o inv1-layout.spice -f ngspice
 ```  
 
+- You can put the commands in a file and load it in the `tkcon` console using `File -> Load`. Useful when you have a long list of commands.
+
 - Run Layout-vs-Schematic (LVS) using `netgen`:
   - `netgen -batch lvs "inv1-xschem.spice inv1" "inv1-layout.spice inv1" /foss/pdks/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl`
 
-**RESOURCES**
+- To extract netlist with parasitics:
 
+``` tcl
+extract all
+ext2spice hierarchy on         ;# Keeps subcircuit hierarchy (or 'off' for flat netlist)
+ext2spice scale off            ;# Use real unit scaling
+ext2spice cthresh 0.01f        ;# Extract capacitances > 0.01f 
+ext2spice rthresh "infinity"   ;# Don't extract resistors	
+ext2spice -o inv1-pex.spice -f ngspice
 
+```
+
+## Advanced Features of Magic
+
+**Creating LEF & GDS**
+
+Following instructions are from `https://github.com/subhransu-01/sky130-magic` :
+
+- To set the prboundary box , select area where you want the bounding box to be and use  
+- `box value` to get the value (eg. 0 0 60 100)  
+- `property FIXED_BBOX [box values]` (eg. property FIXED_BBOX "0 0 60 100")  
+- `select top cell`  
+- `property LEFclass CORE`  
+- `property LEFsymmetry "X Y"`  
+- `property LEFsite [library name]`  
+- `lef write` , to create lef file  
+- `gds write` , to create gds file
+- To check _property_ , `select top cell` then use `property`   
+
+# Resources 
+
+- **IIC-OSIC-TOOLS**
+  - [OSIC-TOOLS GitHub Page](https://github.com/iic-jku/iic-osic-tools)
+
+- **End-to-End Design-to-Layout Flow**
+  - [Open Source VLSI](https://github.com/stineje/gf180mcu-open-source-vlsi): A great detail set of deep tutorials from James Stine and team at OSU.
+  - [Drawing an inverter](https://docs.google.com/document/d/1hSLKsz9xcEJgAMmYYer5cDwvPqas9_JGRUAgEORx1Yw/edit#heading=h.j6gtadx04fb6): A google doc by Ryan Ridley, Teo Ene, and James E. Stine. Detail step-by-step guide for SKY-130nm process.
+  - [Analog Circuit Design Flow](https://analogicus.com/rply_ex0_sky130nm/tutorial) by Carsten Wulff
+  - [Open-Source Analog Design Flowing using EFabless and SKY130nm (PDF)](Thater-OpenSource-AnalogDesgnFlow-Efabless-SKY130.pdf): Detail end-to-end design flow by by Joshua Thater.
+
+  
+- **xschem-ngspice**:
+  - [Xschem Official Site][XSchem]
+  - [ngspice Official Site][NGSpice]
+  - [ngspice Manual][NGSpiceMan]
+  - [Tutorial: Run a simulation with xschem](https://xschem.sourceforge.io/stefan/xschem_man/tutorial_run_simulation.html): a quick step-by-step html guide from the creator Stefan Schippers.
+  - [xschem displaying simulation waveform](https://www.youtube.com/watch?v=bP9w3zm1qv4): a 10min video on embedded graphs by Stephan Schippers.  
+  - [Viewing Simulation Data with xschem](http://repo.hu/projects/xschem/xschem_man/graphs.html): html guide on the official site.
+  - Three part *tutorial videos* using xschem and ngspice with GF180MCU
+    - [Part-1](https://youtu.be/MdywD87-DVg) | [Part-2](https://youtu.be/DLvZSsLAbho) | [Part-3](https://youtu.be/nBnR8Nm_B_I)
+
+- **Magic**
+
+  - [Magic][Magic]: The official site of Magic at opencircuitdesign.com maintained by Tim Edwards. This site has everything you need: source-code/manuals/tutorials/etc
+      - [Magic User Guide from OpenCircuitDesign](http://www.opencircuitdesign.com/magic/userguide.html)
+  - [Magic cheaetsheet](https://github.com/iic-jku/osic-multitool/blob/main/magic-cheatsheet/magic_cheatsheet.pdf) by Harald Pretl.
+  - **Videos**
+    - [10min speedrun of a inverter layout by Matt Venn](https://www.youtube.com/watch?v=IQ_DcWT_cbc)
+    - [Tutorial: Analog Layout of an OpAmp](https://youtu.be/XvBpqKwzrFY?si=AyL0Wr3V4gb954yx) by Tim Edwards. (~1hr 30min)
+    - Magic Tutorials by Carsten Wulff [[Tutorial-1]((https://www.youtube.com/watch?v=ORw5OaY33A4&t=9s)|[Tutorial-2](https://www.youtube.com/watch?v=NUahmUtY814)|[Tutorial-3](https://www.youtube.com/watch?v=OKWM1D0_fPI)]
+
+- **Klayout** 
+  - [Tutorial using KLayout with gf180mcu (part 4)](https://www.youtube.com/watch?v=vamfMryYPS4)
 
 ----
+:technologist: Saroj Rout (:link: `Discord @sroutk`)
 
 
-Author: Saroj Rout
+* * *
+
+[VideoXschemNgspice]:   https://drive.google.com/file/d/1QuJyBosXAcAIhj2Gz0zoxz_EHe3IlhK6/view?usp=sharing
+[VideoMagic]:           https://drive.google.com/file/d/1ffgQrh8-0LQ_lEhNJCcJhuNUZTaG0cDd/view?usp=drive_link
+[XSchem]:               https://xschem.sourceforge.io/stefan/index.html
+[NGSpice]:              https://ngspice.sourceforge.net
+[NGSpiceMan]:           https://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
+[Magic]:                http://opencircuitdesign.com/magic/
+[Netgen]:               http://opencircuitdesign.com/netgen/
