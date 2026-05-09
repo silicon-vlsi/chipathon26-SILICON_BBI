@@ -17,6 +17,7 @@ This is a short tutorial for first-time users of the **xschem**. **ngspice** and
   - [Viewing Simulation Data with xschem](http://repo.hu/projects/xschem/xschem_man/graphs.html): html guide on the official site.
   - Three part *tutorial videos* using xschem and ngspice with GF180MCU
     - [Part-1](https://youtu.be/MdywD87-DVg) | [Part-2](https://youtu.be/DLvZSsLAbho) | [Part-3](https://youtu.be/nBnR8Nm_B_I)
+  - [Open Source VLSI](https://github.com/stineje/gf180mcu-open-source-vlsi): A great detail set of deep tutorials from James Stine at OSU.
 
 - **ngspice**
   - [Official Site](https://ngspice.sourceforge.io/)
@@ -27,6 +28,11 @@ This is a short tutorial for first-time users of the **xschem**. **ngspice** and
 
 # Schematic-entry and Simulation using xschem and ngspice
 
+- This section is a *companion*(ish) page for this [Video Tutorial](https://drive.google.com/file/d/1QuJyBosXAcAIhj2Gz0zoxz_EHe3IlhK6/view?usp=sharing)
+
+- Files used in the video tutorial:
+  - [`xschem-ngspice-files/inv1.sch`](xschem-ngspice-files/inv1.sch): Inverter schematic.
+ 
 It is assumed that you have already installed the opensource design tools using [IIC OSIC TOOLS](https://github.com/iic-jku/iic-osic-tools) container.
 
 - Run Xscheme inside the OSIC-TOOLS docker image:
@@ -137,3 +143,59 @@ plot v(vin) v(vout)
     - In `GAW GUI` opened, click on a panel first, then click on the signal you want to display
     - You can also use embedded plots in xschem. References can be found in the *resource* on top.
 
+
+# Advanced Features
+
+## xschem-ngspice
+
+**Back Annotation of Operating Point**
+
+- Make sure you save the operating point (say for a transistor `XM1` on the top level):
+
+``` spice
+.option savecurrents
+.save @m.xm1.m0[gm] @m.xm1.m0[id] 
+```
+- After simulation is complete, you can annotate the operating points in the schematic: `Simulationns` >> `Graphs` >> `Annotate Operating Point into schematic`
+
+- You can calculate expressions from the operating point and print them. If you want to print the *gm/id* of a device, you can add the following code in the `.control` section:
+
+``` spice
+LET gmoverid=@m.xm1.m0[gm]/@m.xm1.m0[id]
+print gmoverid
+```
+
+- **NOTE**: you can find the heierarchial name of the device by typing `display` in the `ngspice` shell after completetion of simulation. 
+
+
+# Layout with Magic
+
+This section is a *companion*(ish) page for this [Video Tutorial](https://drive.google.com/file/d/1ffgQrh8-0LQ_lEhNJCcJhuNUZTaG0cDd/view?usp=drive_link).
+
+**Quick Start Guide**
+
+- After launching OSIC-TOOLS docker, launch `magic` from the container shell:
+  - `magic -d OGL`
+     - `-d <option>`: Optional option for better graphics. `OGL` for OpenGL and `XR` for Cairo graphics.
+     - `-T <tech file>`: This is not required for chipathon container.
+     - `-r <startup file>`: also not required for chipathon container.
+- Follow the video tutorial or any of the links in the resources to draw and complete the layout.  
+- Extract the netlist using the following `tcl` commands in the tk-console (tkcon):
+
+``` tcl
+extract all 
+ext2spice lvs
+ext2spice -o inv1-layout.spice -f ngspice
+```  
+
+- Run Layout-vs-Schematic (LVS) using `netgen`:
+  - `netgen -batch lvs "inv1-xschem.spice inv1" "inv1-layout.spice inv1" /foss/pdks/gf180mcuD/libs.tech/netgen/gf180mcuD_setup.tcl`
+
+**RESOURCES**
+
+
+
+----
+
+
+Author: Saroj Rout
