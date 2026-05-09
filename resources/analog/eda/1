@@ -2,7 +2,7 @@
 
 This page is companion page for two short video tutorials:
 - [Video Tutorial Part-1][VideoXschemNgspice]: Design and Simulation using Xschem and ngspice
-- [Video Tutorial Part-2][VideoMagic]: Layout using Magic 
+- [Video Tutorial Part-2][VideoMagic]:Layout using Magic 
 
 The purpose of these tutorials is to get circuit designers quickly started on the end-to-end design flow from design to layout using the open-source EDA tools [xschem][XSchem], [ngspice][NGSpice], [Magic][Magic], and [Netgen][Netgen]. Note, although KLayout is not covered in this tutorial, it is very well supported for this project that you will find links to from other tracks.
 
@@ -81,9 +81,7 @@ value="
 "
 ```
 
-
-- For parameters, measure statements, and simulation commands:
-
+    - For parameters, measure statements, and simulation commands:
 
 ``` spice
 name=NGSPICE only_toplevel=true  
@@ -156,7 +154,7 @@ print gmoverid
 
 # Layout with Magic
 
-This section is a *companion* page for this [Video Tutorial Part-2][VideoMagic]:  Layout using Magic
+This section is a *companion* page for this [Video Tutorial on Layout using Magic][VideoMagic]
 
 Files used in this video:
 - [`magic-files/inv1.mag`](magic-files/inv1.mag): Inverter layout
@@ -247,13 +245,14 @@ Following instructions are from `https://github.com/subhransu-01/sky130-magic` :
   - **Videos**
     - [10min speedrun of a inverter layout by Matt Venn](https://www.youtube.com/watch?v=IQ_DcWT_cbc)
     - [Tutorial: Analog Layout of an OpAmp](https://youtu.be/XvBpqKwzrFY?si=AyL0Wr3V4gb954yx) by Tim Edwards. (~1hr 30min)
-    - Magic Tutorials by Carsten Wulff [ [Tutorial-1](https://www.youtube.com/watch?v=ORw5OaY33A4&t=9s)|[Tutorial-2](https://www.youtube.com/watch?v=NUahmUtY814)|[Tutorial-3](https://www.youtube.com/watch?v=OKWM1D0_fPI) ]
+    - Magic Tutorials by Carsten Wulff [[Tutorial-1]((https://www.youtube.com/watch?v=ORw5OaY33A4&t=9s)|[Tutorial-2](https://www.youtube.com/watch?v=NUahmUtY814)|[Tutorial-3](https://www.youtube.com/watch?v=OKWM1D0_fPI)]
 
 - **Klayout** 
   - [Tutorial using KLayout with gf180mcu (part 4)](https://www.youtube.com/watch?v=vamfMryYPS4)
 
 ----
 :technologist: Saroj Rout (:link: `Discord @sroutk`)
+
 
 * * *
 
