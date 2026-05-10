@@ -10,6 +10,16 @@ More resources are provided in the [Resources](#Resources) section of this page 
 
 [GF180MCU Open-Source VLSI Repo](https://github.com/stineje/gf180mcu-open-source-vlsi) from [James E. Stine](https://github.com/stineje) and team is a very detail instructions and tutorials from installation to design. 
 
+## Table of Contents
+
+- [Open-Source EDA Tutorial](#open-source-eda-tutorial)
+- [Design and Simulation using xschem and ngspice](#design-and-simulation-using-xschem-and-ngspice)
+  - [xschem-ngspice Advanced Features](#xschem-ngspice-advanced-features)
+- [Layout with Magic](#layout-with-magic)
+  - [Advanced Features of Magic](#advanced-features-of-magic)
+- [Resources](#resources)
+
+
 # Design and Simulation using xschem and ngspice
 
 - This section is a *companion* page for this [Video Tutorial Part-1][VideoXschemNgspice]: Design and SImulation using xschem and ngspice.
