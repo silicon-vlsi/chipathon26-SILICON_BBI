@@ -7,6 +7,7 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 - [**Zoom Link** for **Official Chipathon Meeting** every **Friday at 8:30PM IST**](https://us06web.zoom.us/j/87694732928?pwd=gjUePaAEKDJB2G3f2d4iPIqyYe0qBx.1)
 - [**Zoom Link** for **SILICON team** meeting at (TBD)]()
 - [An Open-Source **AMS SoC** Template for IHP-SG13G2](https://github.com/iic-jku/ihp-sg13g2-ams-chip-template)
+- [RISCV-321M tinytapeout uLinux](https://github.com/splinedrive/KianV_rv32ia_uLinux_SoC/)
 
 
 # GETTING STARTED
