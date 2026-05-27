@@ -25,6 +25,13 @@ Chipathon 2026 resources for Silicon University, Odisha participant
     - `docker save -o iic-osic-tools.tar hpretl/iic-osic-tools:chipathon26`
 - Once the docker image installed and you can start the container by running the script `start_chipathon_x.bat` in the IIC-OSIC tools foler.
 
+## RISC-V and TL-Verilog
+
+- [MYTH TLV Workshop](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
+- [TLV Projects](https://github.com/TL-X-org/TL-V_Projects): good starting point for those interested in TLV projects.
+- [Building a RISC-V Core](https://www.edx.org/course/building-a-risc-v-cpu-core) on EdX
+- [Makerchip IDE](https://makerchip.com/ide/) >> Learn >> Courses: lot of resources from 1 hr tutorial to 30-hr MYTH workshop.
+
 ## Analog EDA Tools QuickStart Guide
 - Check [this resource page](https://github.com/silicon-vlsi/SI-2026-AnalogIC#resources) to get started with Analog EDA tools (xschem, ngspice, magic)
 
