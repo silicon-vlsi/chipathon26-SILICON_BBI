@@ -27,14 +27,13 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 
 ## RISC-V and TL-Verilog
 
+- [Makerchip IDE](https://makerchip.com/ide/) >> Learn >> **Tutorials**/Courses: lot of resources from 1 hr tutorial to 30-hr MYTH workshop.
 - [Building a RISC-V Core](https://www.edx.org/course/building-a-risc-v-cpu-core) on EdX
-  - [Comapnion GitHUb Page](https://github.com/stevehoover/LF-Building-a-RISC-V-CPU-Core)
+  - [Companion GitHUb Page](https://github.com/stevehoover/LF-Building-a-RISC-V-CPU-Core)
 - [KIANV uSoC runnign Linux](https://tinytapeout.com/chips/tt06/tt_um_kianV_rv32ima_uLinux_SoC) (Tinytapeout RISCV design,, post silicon work)
   - [Companion GitHub page](https://github.com/stevehoover/LF-Building-a-RISC-V-CPU-Core)
 - [MYTH TLV Workshop](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
 - [TLV Projects](https://github.com/TL-X-org/TL-V_Projects): good starting point for those interested in TLV projects.
-- 
-- [Makerchip IDE](https://makerchip.com/ide/) >> Learn >> Courses: lot of resources from 1 hr tutorial to 30-hr MYTH workshop.
 
 ## Analog EDA Tools QuickStart Guide
 - Check [this resource page](https://github.com/silicon-vlsi/SI-2026-AnalogIC#resources) to get started with Analog EDA tools (xschem, ngspice, magic)
