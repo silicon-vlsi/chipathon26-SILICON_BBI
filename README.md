@@ -39,3 +39,13 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 - Check [this resource page](https://github.com/silicon-vlsi/SI-2026-AnalogIC#resources) to get started with Analog EDA tools (xschem, ngspice, magic)
 
 # RESOURCES
+
+## Literature
+
+**PAPERS**
+- Kinget, P. R. “Device Mismatch and Tradeoffs in the Design of Analog Circuits.” IEEE Journal of Solid-State Circuits 40, no. 6 (2005): 1212–24. ([Link to PDF](https://www.researchgate.net/profile/Peter-Kinget-2/publication/2982858_Device_mismatch_and_tradeoffs_in_the_design_of_analog_circuits/links/546094640cf27487b450f6b8/Device-mismatch-and-tradeoffs-in-the-design-of-analog-circuits.pdf)) : Very good reference on how to apply Pelgrom's mismatch model to analog circuits.
+- Pelgrom, M. J. M., A. C. J. Duinmaijer, and A. P. G. Welbers. “Matching Properties of MOS Transistors.” IEEE Journal of Solid-State Circuits 24, no. 5 (1989) ([Link to PDF](http://class.ece.iastate.edu/djchen/EE501/2016/MOS%20TransistorMatching%20pelgrom89.pdf)): Classic paper from Pelgrom orginally formualting the mismatch model.
+
+
+**NOTES**
+- Rout S. "Notes on Calculating current mismatch in current mirrors.", 2026 ([Link to PDF](https://www.dropbox.com/scl/fi/hr193ji9tlm85501c10am/Rout-Notes-mismatch-currentMirror-CHIPATHON2026.pdf?rlkey=u5vzdwcq7q92n9r3ixjvpjfp5&dl=0))
