@@ -48,4 +48,4 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 
 
 **NOTES**
-- Rout S. "Notes on Calculating current mismatch in current mirrors.", 2026 ([Link to PDF](https://www.dropbox.com/scl/fi/hr193ji9tlm85501c10am/Rout-Notes-mismatch-currentMirror-CHIPATHON2026.pdf?rlkey=u5vzdwcq7q92n9r3ixjvpjfp5&dl=0))
+- Rout S. "Notes on Calculating current mismatch in current mirrors.", 2026 ([Link to PDF](https://www.dropbox.com/scl/fi/43msh3ic73igy0jbj1rzy/Rout_Notes_MismatchCurrentMirror.pdf?rlkey=2timr84iabzvwukh4vvnbfzaa&dl=0))
