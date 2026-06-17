@@ -16,7 +16,7 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 
 - One line install script (From Discord chati @Harald Pretl)
   - macOS/Linux: `curl -fsSL https://osic.tools/install.sh | bash`
-  - Windows 10/11: `powershell -c "irm https://osic.tools/install.ps1 | iex`
+  - Windows 10/11: `powershell -c "irm https://osic.tools/install.ps1 | iex"`
 - The above is suppose to take care of the required isntallation: **WSL, Docker Desktop, Git**
   - During Docker install the select: ✅ Use WSL 2 instead of Hyper-V (recommneded)
 - **NOTE** The docker container is a large (>5GB) file so it will take while if the internet connection is slow. Alternatively, you can install the docker from a tar file:
