@@ -9,6 +9,32 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 - [An Open-Source **AMS SoC** Template for IHP-SG13G2](https://github.com/iic-jku/ihp-sg13g2-ams-chip-template)
 - [RISCV-321M tinytapeout uLinux](https://github.com/splinedrive/KianV_rv32ia_uLinux_SoC/)
 
+# TEAMS
+
+## A28 SILICON_BGR
+
+- Title: Compact Low-Power Self-Biased Band Gap Reference Generator with Layout Optimization and Corner Analysis
+- [Issue#98](https://github.com/sscs-ose/sscs-chipathon-2026/issues/98)
+
+## A29 SILICON_DAC 
+
+- Title: 8-Bit Low Power Current Steering DAC
+- [Issue#90](https://github.com/sscs-ose/sscs-chipathon-2026/issues/90)
+
+## A30 SILICON_RISC-V
+
+-Title: 32-bit RISC-V (RV32I) microcontroller using TL-Verilog and Librelane-ORFS Flow
+- [Issue#95](https://github.com/sscs-ose/sscs-chipathon-2026/issues/95)
+- **RESOURCES**
+  - [TinyQV RISCV on TinyTapeout-10](https://tinytapeout.com/chips/ttihp25a/tt_um_MichaelBell_tinyQV): A real tiny RISCV core using QSPI Flash, PSRAM and GPIO, UART interface.
+  - [KIANV uSoC runnign Linux](https://tinytapeout.com/chips/tt06/tt_um_kianV_rv32ima_uLinux_SoC) A simple Tinytapeout design using QSPI flash and PSRAM with SPI, GPIO, UART interface.
+  - 
+
+## A31 SILICON_SAR-ADC
+
+- Title: Low Power 8-bit SAR ADC with Capacitive DAC and Dyamic Comaprator
+- [Issue#97](https://github.com/sscs-ose/sscs-chipathon-2026/issues/97)
+
 
 # GETTING STARTED
 
@@ -30,8 +56,6 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 - [Makerchip IDE](https://makerchip.com/ide/) >> Learn >> **Tutorials**/Courses: lot of resources from 1 hr tutorial to 30-hr MYTH workshop.
 - [Building a RISC-V Core](https://www.edx.org/course/building-a-risc-v-cpu-core) on EdX
   - [Companion GitHUb Page](https://github.com/stevehoover/LF-Building-a-RISC-V-CPU-Core)
-- [KIANV uSoC runnign Linux](https://tinytapeout.com/chips/tt06/tt_um_kianV_rv32ima_uLinux_SoC) (Tinytapeout RISCV design,, post silicon work)
-  - [Companion GitHub page](https://github.com/stevehoover/LF-Building-a-RISC-V-CPU-Core)
 - [MYTH TLV Workshop](https://github.com/stevehoover/RISC-V_MYTH_Workshop)
 - [TLV Projects](https://github.com/TL-X-org/TL-V_Projects): good starting point for those interested in TLV projects.
 
