@@ -23,12 +23,11 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 
 ## A30 SILICON_RISC-V
 
--Title: 32-bit RISC-V (RV32I) microcontroller using TL-Verilog and Librelane-ORFS Flow
+- Title: 32-bit RISC-V (RV32I) microcontroller using TL-Verilog and Librelane-ORFS Flow
 - [Issue#95](https://github.com/sscs-ose/sscs-chipathon-2026/issues/95)
 - **RESOURCES**
   - [TinyQV RISCV on TinyTapeout-10](https://tinytapeout.com/chips/ttihp25a/tt_um_MichaelBell_tinyQV): A real tiny RISCV core using QSPI Flash, PSRAM and GPIO, UART interface.
   - [KIANV uSoC runnign Linux](https://tinytapeout.com/chips/tt06/tt_um_kianV_rv32ima_uLinux_SoC) A simple Tinytapeout design using QSPI flash and PSRAM with SPI, GPIO, UART interface.
-  - 
 
 ## A31 SILICON_SAR-ADC
 
