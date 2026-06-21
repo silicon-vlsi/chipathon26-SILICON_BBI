@@ -51,6 +51,7 @@ Chipathon 2026 resources for Silicon University, Odisha participant
     - [Mismatch Modeling](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV_9_4.html#v-nmos-and-pmos-mismatch-verification-plots)
     - [Flciker Noise - 3.3V](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV_8_1.html#i-f-noise-characteristics)
   - [SRAM IP/Macros](https://gf180mcu-pdk.readthedocs.io/en/latest/IPs/SRAM/sram.html)
+    - [Open Circuit Design 3.3V SRAM macros for GlobalFoundries GF180MCU open PDK](https://github.com/RTimothyEdwards/gf180mcu_ocd_ip_sram/) by Tim Edwards
   - [I/O IP/Macros](https://gf180mcu-pdk.readthedocs.io/en/latest/IPs/IO/io.html)
 - [Chipathon 2026 resource integration page](https://github.com/sscs-ose/sscs-chipathon-2026/blob/add-glayout-intro/resources%2FIntegration%2FREADME.md): This resource page contains the spcific PDK options for Chipathon 2026 including Metal Stack, MIM, poly-resistor, etc.
 - [Datasheet summary and absic design rules](https://github.com/sscs-ose/sscs-chipathon-2026/tree/add-glayout-intro/resources/Analog/pdk)
