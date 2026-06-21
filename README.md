@@ -34,6 +34,37 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 - [Issue#97](https://github.com/sscs-ose/sscs-chipathon-2026/issues/97)
 
 
+# RESOURCES
+
+## Literature
+
+**PAPERS**
+- Kinget, P. R. “Device Mismatch and Tradeoffs in the Design of Analog Circuits.” IEEE Journal of Solid-State Circuits 40, no. 6 (2005): 1212–24. ([Link to PDF](https://www.researchgate.net/profile/Peter-Kinget-2/publication/2982858_Device_mismatch_and_tradeoffs_in_the_design_of_analog_circuits/links/546094640cf27487b450f6b8/Device-mismatch-and-tradeoffs-in-the-design-of-analog-circuits.pdf)) : Very good reference on how to apply Pelgrom's mismatch model to analog circuits.
+- Pelgrom, M. J. M., A. C. J. Duinmaijer, and A. P. G. Welbers. “Matching Properties of MOS Transistors.” IEEE Journal of Solid-State Circuits 24, no. 5 (1989) ([Link to PDF](http://class.ece.iastate.edu/djchen/EE501/2016/MOS%20TransistorMatching%20pelgrom89.pdf)): Classic paper from Pelgrom orginally formualting the mismatch model.
+
+**NOTES**
+- Rout S. "Notes on Calculating current mismatch in current mirrors.", 2026 ([Link to PDF](https://www.dropbox.com/scl/fi/43msh3ic73igy0jbj1rzy/Rout_Notes_MismatchCurrentMirror.pdf?rlkey=2timr84iabzvwukh4vvnbfzaa&dl=0))
+
+## Process PDK
+- [Official GF180MCU PDK page](https://gf180mcu-pdk.readthedocs.io) and some popular sections:
+  - [Model Parameters](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV.html)
+    - [Mismatch Modeling](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV_9_4.html#v-nmos-and-pmos-mismatch-verification-plots)
+    - [Flciker Noise - 3.3V](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV_8_1.html#i-f-noise-characteristics)
+  - [SRAM IP/Macros](https://gf180mcu-pdk.readthedocs.io/en/latest/IPs/SRAM/sram.html)
+  - [I/O IP/Macros](https://gf180mcu-pdk.readthedocs.io/en/latest/IPs/IO/io.html)
+- [Chipathon 2026 resource integration page](https://github.com/sscs-ose/sscs-chipathon-2026/blob/add-glayout-intro/resources%2FIntegration%2FREADME.md): This resource page contains the spcific PDK options for Chipathon 2026 including Metal Stack, MIM, poly-resistor, etc.
+- [Datasheet summary and absic design rules](https://github.com/sscs-ose/sscs-chipathon-2026/tree/add-glayout-intro/resources/Analog/pdk)
+
+**PROCESS SUMMARY**
+- Process: 0.18um 3.3V/(5V) 6V (with MIM) with deep-nwell
+- Operating Voltage: LV=3.3V, HV=5V or 6V
+- BEOL Stack: 1P5LM
+- Top Metal: 11kA
+- MIM Cap Option: Type B (TM-1 / TM)
+- MIM Cap density: 2fF/um^2
+- High-res Poly: 1k/sq (the model to be used is: _ppolyf_u_1k_)
+
+
 # GETTING STARTED
 
 ## Installing IIC-OSIC-TOOLS
@@ -59,31 +90,3 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 
 ## Analog EDA Tools QuickStart Guide
 - Check [this resource page](https://github.com/silicon-vlsi/SI-2026-AnalogIC#resources) to get started with Analog EDA tools (xschem, ngspice, magic)
-
-# RESOURCES
-
-## Literature
-
-**PAPERS**
-- Kinget, P. R. “Device Mismatch and Tradeoffs in the Design of Analog Circuits.” IEEE Journal of Solid-State Circuits 40, no. 6 (2005): 1212–24. ([Link to PDF](https://www.researchgate.net/profile/Peter-Kinget-2/publication/2982858_Device_mismatch_and_tradeoffs_in_the_design_of_analog_circuits/links/546094640cf27487b450f6b8/Device-mismatch-and-tradeoffs-in-the-design-of-analog-circuits.pdf)) : Very good reference on how to apply Pelgrom's mismatch model to analog circuits.
-- Pelgrom, M. J. M., A. C. J. Duinmaijer, and A. P. G. Welbers. “Matching Properties of MOS Transistors.” IEEE Journal of Solid-State Circuits 24, no. 5 (1989) ([Link to PDF](http://class.ece.iastate.edu/djchen/EE501/2016/MOS%20TransistorMatching%20pelgrom89.pdf)): Classic paper from Pelgrom orginally formualting the mismatch model.
-
-**NOTES**
-- Rout S. "Notes on Calculating current mismatch in current mirrors.", 2026 ([Link to PDF](https://www.dropbox.com/scl/fi/43msh3ic73igy0jbj1rzy/Rout_Notes_MismatchCurrentMirror.pdf?rlkey=2timr84iabzvwukh4vvnbfzaa&dl=0))
-
-## Process PDK
-- [Official GF180MCU PDK page](https://gf180mcu-pdk.readthedocs.io) and some popular sections:
-  - [Model Parameters](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV.html)
-    - [Mismatch Modeling](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV_9_4.html#v-nmos-and-pmos-mismatch-verification-plots)
-    - [Flciker Noise - 3.3V](https://gf180mcu-pdk.readthedocs.io/en/latest/analog/model_parameters/LV/LV_8_1.html#i-f-noise-characteristics)
-- [Chipathon 2026 resource integration page](https://github.com/sscs-ose/sscs-chipathon-2026/blob/add-glayout-intro/resources%2FIntegration%2FREADME.md): This resource page contains the spcific PDK options for Chipathon 2026 including Metal Stack, MIM, poly-resistor, etc.
-- [Datasheet summary and absic design rules](https://github.com/sscs-ose/sscs-chipathon-2026/tree/add-glayout-intro/resources/Analog/pdk)
-
-**PROCESS SUMMARY**
-- Process: 0.18um 3.3V/(5V) 6V (with MIM) with deep-nwell
-- Operating Voltage: LV=3.3V, HV=5V or 6V
-- BEOL Stack: 1P5LM
-- Top Metal: 11kA
-- MIM Cap Option: Type B (TM-1 / TM)
-- MIM Cap density: 2fF/um^2
-- High-res Poly: 1k/sq (the model to be used is: _ppolyf_u_1k_)
