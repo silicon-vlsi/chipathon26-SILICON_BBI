@@ -65,6 +65,8 @@ Chipathon 2026 resources for Silicon University, Odisha participant
 - MIM Cap density: 2fF/um^2
 - High-res Poly: 1k/sq (the model to be used is: _ppolyf_u_1k_)
 
+## EDA
+- [How to include digital blocks in ngspice Simulation](https://www.youtube.com/watch?v=PPd7jkcHOgA) by Stefan Schipper
 
 # GETTING STARTED
 
